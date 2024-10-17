@@ -1,6 +1,6 @@
 
 <div align="center">
-<span><h1><a href="https://saqibbedar.github.io/Reactfolio/" target="_blank">GSAP Playground</a></h1></span>
+<span><h1><a href="https://saqibbedar.github.io/GSAP-Playground/" target="_blank">GSAP Playground</a></h1></span>
 
 <span>Unleash Your Creativity with GSAP! Dive into Amazing Projects!</span>
 

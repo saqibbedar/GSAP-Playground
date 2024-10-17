@@ -34,6 +34,9 @@
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
+        #intro-slide h1 {
+          opacity: 0; /* Ensure the h1 elements are invisible initially */
+        }
     </style>
 </head>
   <body
@@ -158,6 +161,6 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="app.js"></script>
+    <script defer src="app.js"></script>
   </body>
 </html>

@@ -1,3 +1,36 @@
+let tl = gsap.timeline();
+
+function introAnimation() {
+
+  gsap.set("#intro-slide h1", { opacity: 1 }); 
+
+  tl.from("#intro-slide", {
+    xPercent: "-100",
+    duration: 1.3,
+    delay: 0.3,
+  })
+    .from("#intro-slide h1", {
+      opacity: 0, // Fade out smoothly
+      y: "+=30",
+      stagger: 0.5,
+    })
+    .to("#intro-slide h1", {
+      autoAlpha: 0, // Automatically handle visibility and opacity
+      y: "-=30",
+      stagger: 0.5,
+    })
+    .to("#intro-slide", {
+      xPercent: "-100",
+      duration: 1.3,
+    })
+    .from("#welcome", {
+      opacity: 0,
+      duration: 0.5,
+    });
+}
+
+introAnimation();
+
 let pcc = document.getElementById("project-cards-container");
 
 let projects_data = [
@@ -77,7 +110,7 @@ const truncateText = (text, limit) => {
 let clutter = "";
 
 projects_data.sort().map(({ project_name, demo_url, source_code_url }) => {
-    clutter += `<div class="bg-white p-6 rounded-lg shadow-lg">
+  clutter += `<div class="bg-white p-6 rounded-lg shadow-lg">
                  <div class="flex items-center gap-3 mb-4">
                               <svg class="w-8 h-8 text-green-500 " stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="inherit" width="inherit" xmlns="http://www.w3.org/2000/svg"><path d="M572.694 292.093L500.27 416.248A63.997 63.997 0 0 1 444.989 448H45.025c-18.523 0-30.064-20.093-20.731-36.093l72.424-124.155A64 64 0 0 1 152 256h399.964c18.523 0 30.064 20.093 20.73 36.093zM152 224h328v-48c0-26.51-21.49-48-48-48H272l-64-64H48C21.49 64 0 85.49 0 112v278.046l69.077-118.418C86.214 242.25 117.989 224 152 224z"></path></svg>
 
@@ -99,35 +132,3 @@ projects_data.sort().map(({ project_name, demo_url, source_code_url }) => {
 });
 
 pcc.innerHTML = clutter;
-
-// animations
-
-let tl = gsap.timeline();
-
-function introAnimation() {
-  tl.from("#intro-slide", {
-    xPercent: "-100",
-    duration: 1.3,
-    delay: 0.3,
-  })
-    .from("#intro-slide h1", {
-      opacity: 0,
-      y: "+=30",
-      stagger: 0.5,
-    })
-    .to("#intro-slide h1", {
-      opacity: 0,
-      y: "-=30",
-      stagger: 0.5,
-    })
-    .to("#intro-slide", {
-      xPercent: "-100",
-      duration: 1.5,
-    })
-    .from("#welcome", {
-      opacity: 0,
-      duration: 0.5,
-    });
-}
-
-introAnimation();
